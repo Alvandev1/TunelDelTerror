@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane fx:controller="com.tunel.RuletaController"
+            xmlns:fx="http://javafx.com/fxml"
+            prefWidth="600" prefHeight="450"
+            stylesheets="@halloween.css">
+
+    <VBox alignment="CENTER" spacing="15"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+          AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+
+        <!-- Texto de bienvenida -->
+        <Label fx:id="lblBienvenida"
+               style="-fx-text-fill: orange; -fx-font-size: 20; -fx-font-weight: bold;"/>
+
+        <!-- Contenedor de la ruleta y la flecha -->
+        <StackPane alignment="CENTER">
+            <!-- 🎡 Imagen de la ruleta (la que gira) -->
+            <ImageView fx:id="imgRuleta"
+                       fitWidth="350" fitHeight="350"
+                       preserveRatio="true"
+                       pickOnBounds="true"/>
+
+            <!-- 🔻 Imagen de la flecha (no gira, apunta hacia abajo) -->
+            <ImageView fx:id="imgFlecha"
+                       fitWidth="55" fitHeight="55"
+                       preserveRatio="true"
+                       translateY="-170"
+                       mouseTransparent="true"/> <!-- no bloquea clics -->
+        </StackPane>
+
+        <!-- Botón para girar -->
+        <Button fx:id="btnGirar"
+                text="GIRAR"
+                onAction="#girarRuleta"
+                style="-fx-background-color: orange; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 10;"/>
+
+        <!-- Resultado final -->
+        <Label fx:id="lblResultado"
+               style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+
+    </VBox>
+</AnchorPane>
